@@ -28,7 +28,7 @@ Log.warning("This is a warning.")
 
 Log.error("This is an error.")
 
-Log.debug("This is a debug message.")
+Log.debug("This is a debug message edited.")
 
 let type = LoggerMessageType.info
 logger.log(type, msg: "This a dynamic message", functionName: "no func", lineNum: #line, fileName: #file)
