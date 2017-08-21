@@ -16,19 +16,13 @@
 
 import HeliumLogger
 import LoggerAPI
+import RxSwift
 
 let logger = HeliumLogger()
 Log.logger = logger
 
-Log.verbose("This is a verbose log message.")
-
-Log.info("This is an informational log message.")
-
-Log.warning("This is a warning.")
-
-Log.error("This is an error.")
-
-Log.debug("This is a debug message edited.")
-
-let type = LoggerMessageType.info
-logger.log(type, msg: "This a dynamic message", functionName: "no func", lineNum: #line, fileName: #file)
+Observable.of(10, 100, 1000)
+	.reduce(1, accumulator: +)
+	.subscribe(onNext: { 
+		Log.verbose("This is a verbose log message. \($0)")
+	})
